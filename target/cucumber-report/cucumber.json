@@ -1,0 +1,80 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 5337968100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 3,
+        "name": "Successful Registration",
+        "description": "",
+        "id": "registration-feature;successful-registration",
+        "after": [
+          {
+            "result": {
+              "duration": 695335200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 111687200,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am on home page",
+            "match": {
+              "location": "HomeSteps.i_am_on_home_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4666079000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I click on \"Tablets\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Tablets",
+                  "offset": 12
+                }
+              ],
+              "location": "HomeSteps.i_click_on_button(String)"
+            },
+            "keyword": "When "
+          }
+        ],
+        "tags": [
+          {
+            "line": 2,
+            "name": "@pro"
+          }
+        ]
+      }
+    ],
+    "name": "Registration Feature",
+    "description": "",
+    "id": "registration-feature",
+    "keyword": "Feature",
+    "uri": "Product.feature"
+  }
+]
