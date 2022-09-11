@@ -9,6 +9,7 @@ import org.openqa.selenium.support.How;
 
 
 public class HomePage extends DriverManager{
+    DriverManager driverManager = new DriverManager();
 
 
     @FindBy(xpath = "//body/nav[@id='top']/div[1]/div[2]/ul[1]/li[2]/a[1]")
@@ -20,11 +21,13 @@ public class HomePage extends DriverManager{
     @FindBy(xpath = "//a[contains(text(),'Tablets')]")
     WebElement tabletButton;
 
-    public void clickOnTabletButton() {
-        DriverManager.flash(tabletButton,driver);
-        DriverManager.drawBorder(tabletButton, driver);
+    public void clickOnTabletButton() throws InterruptedException {
+        driverManager.flash(tabletButton,driver);
+        driverManager.drawBorder(tabletButton, driver);
 
         tabletButton.click();
+        driverManager.generateAlert(driver,"You clicked on Tablet button");
+        Thread.sleep(5000);
     }
 
     public void clickOnRegisterButton(){

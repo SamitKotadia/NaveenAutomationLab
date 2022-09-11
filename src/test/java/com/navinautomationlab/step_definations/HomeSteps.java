@@ -30,7 +30,6 @@ HomePage homePage = new HomePage();
             homePage.clickOnTabletButton();
             break;
     }
-
     }
 
     @When("^I select \"([^\"]*)\" button$")

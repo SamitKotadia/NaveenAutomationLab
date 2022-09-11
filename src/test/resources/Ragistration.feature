@@ -8,8 +8,10 @@ Feature: Registration Feature
     And I select "Register" button
     Then I Should see "Register Account" text on "Register" page
     And I enter following detail for registration
-      | firstName | lastName | email           | telephone  | password | confirmPassword |
-      | Samit     | Kotadia  | samit@gmail.com | 1234567891 | 123456   | 123456          |
+      | firstName | lastName | email           | telephone  |
+      | Samit     | Kotadia  | samit@gmail.com | 1234567891 |
+    And I enter Password
+    And I enter confirm password
     And I select "Yes" button for newsletter
     And I agree on Privacy Policy on register page
     Then I click on Continue button

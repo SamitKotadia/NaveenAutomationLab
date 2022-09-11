@@ -82,7 +82,7 @@ String browser = readCongiFile.getApplicationBrowser();
         wait.withMessage(failureMassage);
     }
 
-    public static void flash(WebElement element, WebDriver driver){
+    public void flash(WebElement element, WebDriver driver){
         JavascriptExecutor javascriptExecutor = ((JavascriptExecutor) driver);
         String backGroundColor = element.getCssValue("backgroundColor");
         for (int i = 0; i<1; i++){
@@ -91,7 +91,7 @@ String browser = readCongiFile.getApplicationBrowser();
         }
     }
 
-    public static void changeColor(String color, WebElement element, WebDriver driver) {
+    public void changeColor(String color, WebElement element, WebDriver driver) {
         JavascriptExecutor javascriptExecutor = ((JavascriptExecutor) driver);
         javascriptExecutor.executeScript("arguments[0].style.backgroundColor = '"+ color+"'",element);
         try {
@@ -99,15 +99,35 @@ String browser = readCongiFile.getApplicationBrowser();
         } catch (InterruptedException e) {
         }
     }
-    public static void drawBorder(WebElement element, WebDriver driver){
+    public void drawBorder(WebElement element, WebDriver driver){
         JavascriptExecutor javascriptExecutor = ((JavascriptExecutor) driver);
         javascriptExecutor.executeScript("arguments[0].style.border='3px solid red'", element);
     }
 
-    public static void screenShot() throws IOException {
+    public void screenShot() throws IOException {
         File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         File trg = new File("\"C:\\Users\\jigar\\Desktop\\screenShotTest\"");
         FileUtils.copyFile(src, trg);
     }
+    //generate alert at run time
+    public void generateAlert(WebDriver driver, String message){
+        ((JavascriptExecutor) driver).executeScript("alert('"+ message+ "')");
+    }
 
+    public void reFreshPage(){
+        driver.navigate().refresh();
+    }
+
+    public void reFreshPageByJE(WebDriver driver){
+        JavascriptExecutor javascriptExecutor = ((JavascriptExecutor) driver);
+        javascriptExecutor.executeScript("history,go(0)");
+    }
+
+    public void scrollTo(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+    public void scrollPageToDown() {
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0,document.body.scrollHeight)");
+    }
 }
+

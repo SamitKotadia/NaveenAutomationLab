@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(features = "src/test/resources/",
         dryRun = false, //step is define in step definition or not
         strict = true,
-        tags = "@pro",
+        tags = "@pass",
         plugin = "json:target/cucumber-report/cucumber.json")
 
 

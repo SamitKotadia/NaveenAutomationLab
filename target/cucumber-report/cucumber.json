@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 5337968100,
+              "duration": 5728060600,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 3,
+        "line": 4,
         "name": "Successful Registration",
         "description": "",
         "id": "registration-feature;successful-registration",
         "after": [
           {
             "result": {
-              "duration": 695335200,
+              "duration": 740422100,
               "status": "passed"
             },
             "match": {
@@ -34,10 +34,10 @@
         "steps": [
           {
             "result": {
-              "duration": 111687200,
+              "duration": 125884100,
               "status": "passed"
             },
-            "line": 5,
+            "line": 6,
             "name": "I am on home page",
             "match": {
               "location": "HomeSteps.i_am_on_home_page()"
@@ -46,27 +46,165 @@
           },
           {
             "result": {
-              "duration": 4666079000,
+              "duration": 77005500,
               "status": "passed"
             },
-            "line": 6,
-            "name": "I click on \"Tablets\" button",
+            "line": 7,
+            "name": "I click on \"My Account\" button",
             "match": {
               "arguments": [
                 {
-                  "val": "Tablets",
+                  "val": "My Account",
                   "offset": 12
                 }
               ],
               "location": "HomeSteps.i_click_on_button(String)"
             },
             "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 657542300,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I select \"Register\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Register",
+                  "offset": 10
+                }
+              ],
+              "location": "HomeSteps.i_select_button(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5054022000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I Should see \"Register Account\" text on \"Register\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Register Account",
+                  "offset": 14
+                },
+                {
+                  "val": "Register",
+                  "offset": 41
+                }
+              ],
+              "location": "CommanSteps.i_Should_see_text_on_page(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 415894200,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I enter following detail for registration",
+            "match": {
+              "location": "RegisterSteps.i_enter_following_detail_for_registration(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "firstName",
+                  "lastName",
+                  "email",
+                  "telephone"
+                ],
+                "line": 11
+              },
+              {
+                "cells": [
+                  "Samit",
+                  "Kotadia",
+                  "samit@gmail.com",
+                  "1234567891"
+                ],
+                "line": 12
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 116089000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I enter Password",
+            "match": {
+              "location": "RegisterSteps.i_enter_Password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 110737300,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I enter confirm password",
+            "match": {
+              "location": "RegisterSteps.i_enter_confirm_password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5001557300,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I wait for some time",
+            "match": {
+              "location": "RegisterSteps.i_wait_for_some_time()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 86561200,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I select \"Yes\" button for newsletter",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Yes",
+                  "offset": 10
+                }
+              ],
+              "location": "RegisterSteps.i_select_button_for_newsletter(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 80207000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I agree on Privacy Policy on register page",
+            "match": {
+              "location": "RegisterSteps.i_agree_on_Privacy_Policy_on_register_page()"
+            },
+            "keyword": "And "
           }
         ],
         "tags": [
           {
-            "line": 2,
-            "name": "@pro"
+            "line": 3,
+            "name": "@pass"
           }
         ]
       }
@@ -75,6 +213,6 @@
     "description": "",
     "id": "registration-feature",
     "keyword": "Feature",
-    "uri": "Product.feature"
+    "uri": "RegPass.feature"
   }
 ]

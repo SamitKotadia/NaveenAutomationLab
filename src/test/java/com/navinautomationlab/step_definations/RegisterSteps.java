@@ -1,6 +1,7 @@
 package com.navinautomationlab.step_definations;
 
 import com.navinautomationlab.driver.DriverManager;
+import com.navinautomationlab.driver.ReadCongiFile;
 import com.navinautomationlab.pages.RegisterPage;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
@@ -11,6 +12,7 @@ import java.util.Map;
 public class RegisterSteps extends DriverManager {
     RegisterPage registerPage = new RegisterPage();
     DriverManager driverManager = new DriverManager();
+    ReadCongiFile readCongiFile =new ReadCongiFile("Config.properties");
 
     @Then("^I enter following detail for registration$")
     public void i_enter_following_detail_for_registration(DataTable registrationTable) throws Throwable {
@@ -21,9 +23,6 @@ public class RegisterSteps extends DriverManager {
         registerPage.enterLastName(data.get(0).get("lastName"));
         registerPage.enterEmailID(data.get(0).get("email"));
         registerPage.enterTelephoneNumber(data.get(0).get("telephone"));
-        registerPage.enterPassword(data.get(0).get("password"));
-        registerPage.enterConfirmPassword(data.get(0).get("confirmPassword"));
-
     }
 
     @Then("^I select \"([^\"]*)\" button for newsletter$")
@@ -54,4 +53,15 @@ public class RegisterSteps extends DriverManager {
     registerPage.setClickOnContinueAfterSuccess();
 
     }
+
+    @Then("^I enter Password$")
+    public void i_enter_Password() throws Throwable {
+    registerPage.enterPassword(readCongiFile.getPassword());
+    }
+
+    @Then("^I enter confirm password$")
+    public void i_enter_confirm_password() throws Throwable {
+        registerPage.enterConfirmPassword(readCongiFile.getConfirmPassword());
+    }
+
 }
